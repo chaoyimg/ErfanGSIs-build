@@ -45,14 +45,19 @@ jobs:
               
        - name: Pack GSI
          run: |
-           sudo apt install zip gzip
-           zip -r AB_GSI.zip ErfanGSIs/output/*
-           gzip -9 -c AB_GSI.zip > AB_GSI.zip.gz
+           cd $GITHUB_WORKSPACE/ErfanGSIs/output
+           mkdir upload
+           zip -r GSI.zip ./*
+           if [[ $(du -sb "GSI.zip" | awk '{print $1}') -gt 2097152000 ]];then
+               echo -e "split packaging..."
+               tar -cpzf - "GSI.zip" | split -d -b 1024m - "upload/GSI.zip"
+           else
+               mv GSI.zip upload/
               
        - name: Upload GSI
          uses: ncipollo/release-action@v1.8.6
          with:
-           artifacts: ErfanGSIs/output/*
+           artifacts: ErfanGSIs/output/upload/*
            name: ErfanGSI
            tag: ErfanGSI
            token: ${{ secrets.GITHUB_TOKEN }}
