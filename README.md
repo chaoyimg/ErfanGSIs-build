@@ -1,5 +1,6 @@
 # ErfanGSIs-build
-> version:0.1-alpha
+Language: 中文/<a href=README_EN.md> En </a> </span>
+> Version:0.1-alpha2
 ## 一个自动跑 ErfanGSIs 的脚本。 
 ### 步骤如下： 
 - 首先，fork 这个仓库。 
