@@ -1,4 +1,4 @@
-name: build_ErfanGSIs
+name: ErfanGSIs-build-AB
 
 on: 
   workflow_dispatch:
@@ -9,10 +9,6 @@ on:
       ROM_TYPE:
         description: 'ROM_TYPE'
         required: true
-      RELEASE_NAME:
-        description: 'RELEASE_NAME'
-        required: true
-
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -49,9 +45,9 @@ jobs:
               
        - name: Pack GSI
          run: |
-           sudo apt install tar gzip
-           tar -cvf ErfanGSIs/output/GSI.tar ErfanGSIs/output
-           gzip -9 -c ErfanGSIs/output/GSI.tar > GSI.tar.gz
+           sudo apt install zip gzip
+           zip -r AB_GSI.zip ErfanGSIs/output/*
+           gzip -9 -c AB_GSI.zip > AB_GSI.zip.gz
               
        - name: Upload GSI
          uses: ncipollo/release-action@v1.8.6
