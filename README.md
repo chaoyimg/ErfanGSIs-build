@@ -1,5 +1,5 @@
 # ErfanGSIs-build
-
+> version:0.1-alpha
 ## 一个自动跑 ErfanGSIs 的脚本。 
 ### 步骤如下： 
 - 首先，fork 这个仓库。 
