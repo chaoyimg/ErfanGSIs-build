@@ -51,12 +51,12 @@ tar xzvf 'File'.tar.gz                                       # Unzip
 
 > Flyme
 
-## Android 11:
+### Android 11:
 > Generic
 	
 > Pixel
 
-## Android 12:
+### Android 12:
 > Generic
 	
 > Pixel
