@@ -49,9 +49,10 @@ jobs:
            mkdir upload
            zip -r GSI.zip ./*
            if [[ $(du -sb "GSI.zip" | awk '{print $1}') -gt 2097152000 ]];then
-               echo -e "split packaging..."
+               echo -e "1split packaging..."
                tar -cpzf - "GSI.zip" | split -d -b 1024m - "upload/GSI.zip"
            else
+               echo -e "2split packaging..."
                mv GSI.zip upload/
               
        - name: Upload GSI
