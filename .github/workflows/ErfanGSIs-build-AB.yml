@@ -52,7 +52,7 @@ jobs:
                echo -e "split packaging..."
                tar -cpzf - "GSI.zip" | split -d -b 1024m - "upload/GSI.zip"
            else
-               mv GSI.zip upload/
+               mv GSI.zip upload/*
               
        - name: Upload GSI
          uses: ncipollo/release-action@v1.8.6
