@@ -48,6 +48,7 @@ jobs:
            cd $GITHUB_WORKSPACE/ErfanGSIs/output
            mkdir upload
            zip -r GSI.zip ./*
+           mv GSI.zip upload/*
               
        - name: Upload GSI
          uses: ncipollo/release-action@v1.8.6
